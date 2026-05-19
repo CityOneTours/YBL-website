@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Brands — YUTI BREWERIIES Ltd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+<style>
+/* ===================================
+   BRANDS PAGE STYLES
+   =================================== */
+.brand-nav {
+  background: var(--dark);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+}
+.brand-nav-inner {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.brand-nav-inner::-webkit-scrollbar { display: none; }
+.brand-nav-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 18px 16px;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  border-right: 1px solid rgba(201,168,76,0.08);
+  transition: all 0.3s;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.brand-nav-item:hover, .brand-nav-item.active {
+  color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+
+/* SECTION STYLES */
+.brand-section { position: relative; padding: 100px 0; overflow: hidden; }
+.brand-section.tan-bg { background: var(--tan); }
+.brand-section.dark-bg { background: var(--dark-2); }
+.brand-section.very-dark { background: #070503; }
+.brand-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* SECTION HEADERS */
+.brands-section-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 48px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid rgba(10,8,5,0.08);
+}
+.brands-section-header.dark-border { border-color: rgba(255,255,255,0.06); }
+.bsh-left {}
+.bsh-right { text-align: right; max-width: 340px; }
+.bsh-right p { font-size: 0.84rem; color: rgba(10,8,5,0.5); line-height: 1.8; }
+.bsh-right p.light { color: rgba(255,255,255,0.38); }
+
+/* BRAND SHOWCASE FULL */
+.brand-showcase-full {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(10,8,5,0.05);
+  overflow: hidden;
+}
+.brand-showcase-full:last-of-type { margin-bottom: 0; }
+.brand-showcase-full.dark-card { border-color: rgba(201,168,76,0.07); }
+.brand-showcase-full.reverse .bsf-img { order: 2; }
+.brand-showcase-full.reverse .bsf-content { order: 1; }
+
+/* IMAGE SIDE */
+.bsf-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 580px;
+  background: var(--dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bsf-img-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.22);
+  transform: scale(1.06);
+  transition: transform 0.7s ease;
+}
+.brand-showcase-full:hover .bsf-img-bg { transform: scale(1.12); }
+
+.bsf-img-product {
+  position: relative;
+  z-index: 2;
+  max-width: 72%;
+  max-height: 500px;
+  object-fit: contain;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.65));
+  animation: floatBottle 4s ease-in-out infinite;
+}
+@keyframes floatBottle {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.brand-showcase-full:hover .bsf-img-product {
+  animation-play-state: paused;
+  transform: translateY(-8px) scale(1.03);
+  transition: transform 0.4s ease;
+}
+
+.bsf-badges {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bsf-abv {
+  background: rgba(5,4,3,0.88);
+  backdrop-filter: blur(8px);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  padding: 8px 16px;
+  letter-spacing: 0.06em;
+  border-left: 2px solid var(--gold);
+}
+.bsf-abv.crimson { border-color: var(--crimson); color: #f08080; background: rgba(80,10,10,0.85); }
+.bsf-abv.blue-badge { border-color: #1a4f8b; color: #82b4ff; }
+.bsf-abv.green-badge { border-color: #2e7d32; color: #81c784; }
+.bsf-abv.orange-badge { border-color: #bf360c; color: #ffb74d; }
+.bsf-abv.label-only { font-size: 0.72rem; letter-spacing: 0.2em; }
+
+.bsf-award {
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 7px 12px;
+  align-self: flex-start;
+}
+
+/* CONTENT SIDE */
+.bsf-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  position: relative;
+}
+.bsf-content.dark-content { background: var(--dark-3); }
+.bsf-content.tan-content { background: var(--tan); }
+
+.bsf-cat { margin-bottom: 20px; }
+.bsf-cat-label {
+  font-size: 0.57rem;
+  letter-spacing: 0.35em;
+  font-weight: 700;
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  display: inline-block;
+}
+.cat-beer { background: rgba(201,168,76,0.12); color: #7a5c00; border: 1px solid rgba(201,168,76,0.35); }
+.cat-spirits { background: rgba(139,26,26,0.1); color: var(--crimson); border: 1px solid rgba(139,26,26,0.3); }
+.cat-gin { background: rgba(26,79,139,0.1); color: #1a4f8b; border: 1px solid rgba(26,79,139,0.3); }
+.cat-vodka { background: rgba(60,60,60,0.08); color: #555; border: 1px solid rgba(60,60,60,0.2); }
+.cat-rum { background: rgba(100,45,10,0.1); color: #7B3A10; border: 1px solid rgba(100,45,10,0.3); }
+.cat-liquor { background: rgba(139,60,26,0.1); color: #8B3C1A; border: 1px solid rgba(139,60,26,0.3); }
+.cat-water { background: rgba(26,119,189,0.08); color: #1a6ea0; border: 1px solid rgba(26,119,189,0.25); }
+.cat-soda { background: rgba(200,60,30,0.08); color: #c03818; border: 1px solid rgba(200,60,30,0.25); }
+.cat-health { background: rgba(76,175,80,0.1); color: #2e7d32; border: 1px solid rgba(76,175,80,0.3); }
+
+.bsf-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: 0.04em;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.bsf-name.light { color: var(--cream); }
+
+.bsf-tagline {
+  font-family: var(--font-elegant);
+  font-size: 1.12rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+.bsf-tagline.muted { color: rgba(255,255,255,0.4); }
+
+.bsf-desc {
+  font-size: 0.86rem;
+  line-height: 1.9;
+  color: rgba(10,8,5,0.58);
+  margin-bottom: 32px;
+  max-width: 450px;
+}
+.bsf-desc.light { color: rgba(255,255,255,0.48); }
+
+/* SPECS */
+.bsf-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(10,8,5,0.06);
+  border: 1px solid rgba(10,8,5,0.06);
+  margin-bottom: 28px;
+}
+.bsf-specs.dark-specs { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.04); }
+.bsf-spec { padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; background: white; }
+.dark-specs .bsf-spec { background: rgba(255,255,255,0.025); }
+.tan-content .bsf-specs { background: rgba(10,8,5,0.06); }
+.tan-content .bsf-spec { background: var(--tan); }
+.bsf-spec-label { font-size: 0.54rem; letter-spacing: 0.22em; color: var(--gold); font-weight: 700; font-family: var(--font-body); }
+.bsf-spec-val { font-size: 0.86rem; color: var(--dark); font-weight: 600; }
+.dark-specs .bsf-spec-val { color: var(--cream); }
+
+/* TAGS */
+.bsf-notes-label { font-size: 0.54rem; letter-spacing: 0.28em; color: rgba(10,8,5,0.3); display: block; margin-bottom: 10px; font-family: var(--font-body); }
+.bsf-notes-label.light { color: rgba(255,255,255,0.22); }
+.bsf-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.bsf-tag {
+  padding: 6px 13px;
+  font-size: 0.69rem;
+  border: 1px solid rgba(10,8,5,0.1);
+  color: rgba(10,8,5,0.52);
+  background: rgba(10,8,5,0.02);
+  letter-spacing: 0.04em;
+  transition: all 0.3s;
+  cursor: default;
+}
+.bsf-tag:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+.bsf-tag.dark-tag { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.03); }
+.bsf-tag.dark-tag:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+/* GIANT BG NUMBER */
+.bsf-number {
+  position: absolute;
+  bottom: 16px;
+  right: 28px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  color: rgba(10,8,5,0.035);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.bsf-number.light { color: rgba(255,255,255,0.04); }
+
+/* SANITIZER */
+.sanit-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(201,168,76,0.07);
+  overflow: hidden;
+}
+.sanit-img-side {
+  background: #0c0c09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  min-height: 500px;
+  position: relative;
+}
+.sanit-img-side::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(76,175,80,0.07) 0%, transparent 70%);
+}
+.sanit-img-side img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.55));
+  position: relative;
+  z-index: 1;
+  animation: floatBottle 4s ease-in-out infinite;
+}
+.sanit-content-side {
+  background: #0a0a07;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sanit-cert-list { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.sanit-cert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border: 1px solid rgba(76,175,80,0.14);
+  background: rgba(76,175,80,0.04);
+  transition: all 0.3s;
+}
+.sanit-cert:hover { border-color: rgba(76,175,80,0.38); background: rgba(76,175,80,0.09); }
+.sanit-cert-icon { font-size: 1.1rem; flex-shrink: 0; }
+.sanit-cert span { font-size: 0.79rem; color: rgba(255,255,255,0.52); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .brand-showcase-full { grid-template-columns: 1fr; }
+  .brand-showcase-full.reverse .bsf-img { order: 0; }
+  .brand-showcase-full.reverse .bsf-content { order: 0; }
+  .bsf-img { min-height: 400px; }
+  .bsf-content { padding: 40px; }
+  .brands-section-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .bsh-right { text-align: left; max-width: 100%; }
+  .sanit-showcase { grid-template-columns: 1fr; }
+  .sanit-img-side { min-height: 320px; padding: 40px; }
+  .sanit-content-side { padding: 40px; }
+}
+@media (max-width: 768px) {
+  .bsf-content { padding: 30px 24px; }
+  .bsf-name { font-size: 2rem; }
+  .bsf-specs { grid-template-columns: 1fr 1fr; }
+  .brand-nav-item { min-width: 120px; font-size: 0.6rem; padding: 16px 10px; }
+  .brand-section { padding: 70px 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-logo">
+    <a href="index.html" class="logo-img">
+      <img src="images/ybl loo.png" alt="YUTI" style="height:46px;"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span style="display:none;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#C9A84C;letter-spacing:0.05em;flex-direction:column;">YUTI<small style="font-size:0.4rem;letter-spacing:0.32em;color:rgba(201,168,76,0.6);font-family:'Montserrat',sans-serif;">BREWERIIES</small></span>
+    </a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="brands.html" class="active">Our Brands</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+            <li><a href="distribution.html">Distribution</a></li>
+            <li><a href="promotions.html">Promotions</a></li>
+            <li><a href="new-brands.html">New Brands</a></li>
+            <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1920&h=800&fit=crop" alt="">
+    <div class="page-hero-overlay"></div>
+  </div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Our Brands</div>
+    <h1 class="page-title">Our <em>Brands</em></h1>
+    <p class="page-subtitle">Crafted with passion, enjoyed with pride</p>
+  </div>
+</section>
+
+<!-- STICKY BRAND NAV -->
+<div class="brand-nav">
+  <div class="container">
+    <div class="brand-nav-inner">
+      <a href="#beer" class="brand-nav-item active">🍺 Beer</a>
+      <a href="#spirits" class="brand-nav-item">🥃 Spirits</a>
+      <a href="#gin" class="brand-nav-item">🍸 Gin & Vodka</a>
+      <a href="#rum" class="brand-nav-item">🥃 Rum</a>
+      <a href="#beverages" class="brand-nav-item">💧 Water & Soda</a>
+      <a href="#sanitizer" class="brand-nav-item">🧴 Sanitizer</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================
+     BEER
+     ============================ -->
+<section class="brand-section tan-bg" id="beer">
+  <div class="container">
+    <div class="brands-section-header reveal">
+      <div class="bsh-left">
+        <div class="section-tag">OUR BEERS</div>
+        <h2 class="section-title" style="color:var(--dark);margin-bottom:0;">Crafted for Every<br><em>Celebration</em></h2>
+      </div>
+      <div class="bsh-right">
+        <p>All beers exist to celebrate and pioneer the progressive spirit. Proudly progressive and true to our authentic selves — driven by passion and determination to make the most of everyday life in its stride.</p>
+      </div>
+    </div>
+
+    <!-- YURA GOLD -->
+    <div class="brand-showcase-full reveal">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/brands/gold .png"
+          onerror="this.src='https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&h=700&fit=crop&crop=center'" alt="Yura Gold">
+        <div class="bsf-badges">
+          <div class="bsf-abv">4.5% ABV</div>
+        </div>
+      </div>
+      <div class="bsf-content tan-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-beer">🍺 BEER</span></div>
+        <div class="bsf-name">YURA GOLD</div>
+        <div class="bsf-tagline">Sociable. Inclusive. Unifying.</div>
+        <p class="bsf-desc">Yura Gold is sociable, inclusive, inviting and unifying with an aroma of sweet, almost coffee-like malt. Crafted from 100% locally procured Ugandan ingredients and brewed to bring people together — one sip at a time. Proudly progressive and true to our authentic selves.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">4.5%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Premium Lager</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">VOLUME</span><span class="bsf-spec-val">500ml</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">INGREDIENTS</span><span class="bsf-spec-val">100% Local</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SERVE</span><span class="bsf-spec-val">Ice Cold</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Sweet Malt</span>
+            <span class="bsf-tag">Coffee Notes</span>
+            <span class="bsf-tag">Smooth Finish</span>
+            <span class="bsf-tag">Refreshing</span>
+            <span class="bsf-tag">Golden Colour</span>
+          </div>
+        </div>
+        <div class="bsf-number">01</div>
+      </div>
+    </div>
+
+    <!-- YURA STRONG -->
+    <div class="brand-showcase-full reverse reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/brands/Untitled-1.png"
+          onerror="this.src='https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=500&h=700&fit=crop&crop=center'" alt="Yura Strong">
+        <div class="bsf-badges">
+          <div class="bsf-abv">7% ABV</div>
+        </div>
+      </div>
+      <div class="bsf-content tan-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-beer">🍺 BEER</span></div>
+        <div class="bsf-name">YURA STRONG</div>
+        <div class="bsf-tagline">Bold. Progressive. Unstoppable.</div>
+        <p class="bsf-desc">With ingredients that are 100% locally procured in Uganda, Yura Strong is brewed to give our customers good vibes while progressively taking life in its stride. A full-bodied premium strong lager for those who like their beer bold and unapologetic.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">7%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Strong Lager</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">INGREDIENTS</span><span class="bsf-spec-val">100% Local</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">VOLUME</span><span class="bsf-spec-val">500ml</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SERVE</span><span class="bsf-spec-val">Ice Cold</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Bold</span>
+            <span class="bsf-tag">Rich Malt</span>
+            <span class="bsf-tag">Good Vibes</span>
+            <span class="bsf-tag">Full Bodied</span>
+            <span class="bsf-tag">Deep Amber</span>
+          </div>
+        </div>
+        <div class="bsf-number">02</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     SPIRITS & LIQUEUR
+     ============================ -->
+<section class="brand-section dark-bg" id="spirits">
+  <div class="container">
+    <div class="brands-section-header dark-border reveal">
+      <div class="bsh-left">
+        <div class="section-tag">SPIRITS & LIQUEUR</div>
+        <h2 class="section-title light" style="margin-bottom:0;">Premium <em>Liqueurs</em></h2>
+      </div>
+      <div class="bsh-right">
+        <p class="light">Distilled to perfection. The Number 1 choice of drink whenever friends gather or celebrate everyday wins. 80% of all ingredients locally purchased from the Ugandan market.</p>
+      </div>
+    </div>
+
+    <!-- TORRERO ORIGINAL -->
+    <div class="brand-showcase-full dark-card reveal">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/Group 1707478884.png"
+          onerror="this.src='https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=500&h=700&fit=crop&crop=center'" alt="Torrero Original">
+        <div class="bsf-badges">
+          <div class="bsf-abv crimson">42.8% ABV</div>
+          <div class="bsf-award">🏆 People's Choice 2021 & 2022</div>
+        </div>
+      </div>
+      <div class="bsf-content dark-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-spirits">🥃 LIQUEUR</span></div>
+        <div class="bsf-name light">TORRERO ORIGINAL</div>
+        <div class="bsf-tagline">The Number 1 Choice.</div>
+        <p class="bsf-desc light">First produced in April 2020 with the sole purpose of being a premium drink that's affordable to all. With the available market short on liqueurs, Torrero created a path beyond measurable situations. Distilled to perfection — with 80% of all ingredients locally purchased in Uganda.</p>
+        <div class="bsf-specs dark-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">42.8%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Blended Liqueur</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">LOCAL INGREDIENTS</span><span class="bsf-spec-val">80%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SIZES</span><span class="bsf-spec-val">100ml, 300ml, 700ml</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">AWARD</span><span class="bsf-spec-val">People's Choice ×2</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label light">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag dark-tag">Smooth</span>
+            <span class="bsf-tag dark-tag">Premium</span>
+            <span class="bsf-tag dark-tag">Easy Going</span>
+            <span class="bsf-tag dark-tag">Celebratory</span>
+            <span class="bsf-tag dark-tag">Warm Finish</span>
+          </div>
+        </div>
+        <div class="bsf-number light">03</div>
+      </div>
+    </div>
+
+    <!-- YURA TANGAWISI -->
+    <div class="brand-showcase-full dark-card reverse reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/bottle images/1L4A5384.jpg-Photoroom.png"
+          onerror="this.src='https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=600&fit=crop&crop=center'" alt="Yura Tangawisi">
+        <div class="bsf-badges">
+          <div class="bsf-abv orange-badge label-only">GINGER LIQUOR</div>
+        </div>
+      </div>
+      <div class="bsf-content dark-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-liquor">🫚 LIQUOR</span></div>
+        <div class="bsf-name light">YURA TANGAWISI</div>
+        <div class="bsf-tagline">Gengibre. Warming. Ugandan.</div>
+        <p class="bsf-desc light">Yura Tangawisi is a distinctive ginger-infused liquor crafted from locally sourced Ugandan ginger root. Bold, warming and unmistakably East African — it delivers a spiced, fiery kick perfect for those who love a drink with real character and depth.</p>
+        <div class="bsf-specs dark-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Ginger Liquor</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOUR</span><span class="bsf-spec-val">Gengibre / Ginger</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">INGREDIENTS</span><span class="bsf-spec-val">Locally Sourced</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label light">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag dark-tag">Spiced Ginger</span>
+            <span class="bsf-tag dark-tag">Warming</span>
+            <span class="bsf-tag dark-tag">Fiery Finish</span>
+            <span class="bsf-tag dark-tag">Bold Character</span>
+          </div>
+        </div>
+        <div class="bsf-number light">04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     GIN & VODKA
+     ============================ -->
+<section class="brand-section tan-bg" id="gin">
+  <div class="container">
+    <div class="brands-section-header reveal">
+      <div class="bsh-left">
+        <div class="section-tag">GIN & VODKA</div>
+        <h2 class="section-title" style="color:var(--dark);margin-bottom:0;">Flavoured <em>Gins</em><br>& Premium Vodka</h2>
+      </div>
+      <div class="bsh-right">
+        <p>Our diverse spirits portfolio has something for everyone. U-GIN Waragi brings locally crafted tropical flavour in every bottle, while NYXX delivers premium chocolate-infused vodka for the sophisticated palate.</p>
+      </div>
+    </div>
+
+    <!-- U-GIN WARAGI -->
+    <div class="brand-showcase-full reveal">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/bottle images/1L4A5367.jpg copy-Photoroom.png"
+          onerror="this.src='https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=600&fit=crop&crop=center'" alt="U-Gin Waragi Ginger">
+        <div class="bsf-badges"><div class="bsf-abv">42.8% ABV</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-gin">🍸 GIN</span></div>
+        <div class="bsf-name">U-GIN WARAGI</div>
+        <div class="bsf-tagline">The Taste of Home. Ginger Flavoured.</div>
+        <p class="bsf-desc">U-GIN Waragi is Uganda's locally crafted gin — built on the familiar flavours of home. The ginger variant brings warmth and fire, inspired by the bold flavours of East African cuisine. Distilled with locally sourced botanicals for an authentic Ugandan gin experience.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">42.8%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Flavoured Gin</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOUR</span><span class="bsf-spec-val">Ginger (Waragi)</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Spiced Ginger</span>
+            <span class="bsf-tag">Botanical</span>
+            <span class="bsf-tag">Warm Finish</span>
+            <span class="bsf-tag">Clean & Crisp</span>
+          </div>
+        </div>
+        <div class="bsf-number">05</div>
+      </div>
+    </div>
+
+    <!-- U-GIN PINEAPPLE -->
+    <div class="brand-showcase-full reverse reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/bottle images/1L4A5330.jpg.jpeg"
+          onerror="this.src='https://images.unsplash.com/photo-1490885578174-acda8905c2c6?w=400&h=600&fit=crop&crop=center'" alt="U-Gin Pineapple">
+        <div class="bsf-badges"><div class="bsf-abv">42.8% ABV</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-gin">🍸 GIN</span></div>
+        <div class="bsf-name">U-GIN PINEAPPLE</div>
+        <div class="bsf-tagline">Tropical. Vibrant. Refreshing.</div>
+        <p class="bsf-desc">U-GIN Pineapple captures the vibrant tropical spirit of East Africa. Infused with sun-ripened pineapple flavour, this gin variant is sweet, tangy and unmistakably refreshing. Perfect served over ice or mixed into your favourite cocktail for a burst of tropical sunshine.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">42.8%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Flavoured Gin</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOUR</span><span class="bsf-spec-val">Pineapple</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Tropical Fruit</span>
+            <span class="bsf-tag">Sweet & Tangy</span>
+            <span class="bsf-tag">Refreshing</span>
+            <span class="bsf-tag">Vibrant</span>
+          </div>
+        </div>
+        <div class="bsf-number">06</div>
+      </div>
+    </div>
+
+    <!-- U-GIN MANGO -->
+    <div class="brand-showcase-full reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images\bottle images\1L4A5367.jpg copy-Photoroom.png"
+          onerror="this.src='https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=600&fit=crop&crop=center'" alt="U-Gin Mango">
+        <div class="bsf-badges"><div class="bsf-abv">42.8% ABV</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-gin">🍸 GIN</span></div>
+        <div class="bsf-name">U-GIN MANGO</div>
+        <div class="bsf-tagline">Premium Mango. Pure Uganda.</div>
+        <p class="bsf-desc">U-GIN Mango is inspired by Uganda's world-famous mangoes. Rich, juicy mango flavour distilled into a premium gin — smooth, luscious and deeply satisfying. A celebration of East Africa's finest tropical fruit in a bottle. Pour over ice and let Uganda come to you.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">42.8%</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Flavoured Gin</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOUR</span><span class="bsf-spec-val">Premium Mango</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Ripe Mango</span>
+            <span class="bsf-tag">Sweet</span>
+            <span class="bsf-tag">Luscious</span>
+            <span class="bsf-tag">Smooth Finish</span>
+          </div>
+        </div>
+        <div class="bsf-number">07</div>
+      </div>
+    </div>
+
+    <!-- NYXX CHOCOLATE VODKA -->
+    <div class="brand-showcase-full reverse reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/bottle images/1L4A5358.jpg copy.png"
+          onerror="this.src='https://images.unsplash.com/photo-1481391032119-d89fee407e44?w=400&h=600&fit=crop&crop=center'" alt="NYXX Chocolate Vodka">
+        <div class="bsf-badges"><div class="bsf-abv label-only">VODKA</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-vodka">🍫 VODKA</span></div>
+        <div class="bsf-name">NYXX CHOCOLATE</div>
+        <div class="bsf-tagline">Dark. Rich. Indulgent.</div>
+        <p class="bsf-desc">NYXX Chocolate Vodka is a premium indulgence — rich chocolate flavour fused with smooth, clean vodka. Velvety and decadent, it's perfect enjoyed chilled, on the rocks, or as the star of a chocolate martini. A luxurious treat for the bold, sophisticated consumer.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Flavoured Vodka</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOUR</span><span class="bsf-spec-val">Dark Chocolate</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SERVE</span><span class="bsf-spec-val">Chilled / Cocktail</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Dark Chocolate</span>
+            <span class="bsf-tag">Velvety</span>
+            <span class="bsf-tag">Rich & Smooth</span>
+            <span class="bsf-tag">Indulgent</span>
+          </div>
+        </div>
+        <div class="bsf-number">08</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     RUM
+     ============================ -->
+<section class="brand-section very-dark" id="rum">
+  <div class="container">
+    <div class="brands-section-header dark-border reveal">
+      <div class="bsh-left">
+        <div class="section-tag">RUM</div>
+        <h2 class="section-title light" style="margin-bottom:0;">Premium <em>Rum Liqueur</em></h2>
+      </div>
+      <div class="bsh-right">
+        <p class="light">Inspired by the great rum traditions — brought to life with Ugandan character. RUMCO is a premium rum liqueur crafted for those who appreciate complexity, depth and a smooth, satisfying finish.</p>
+      </div>
+    </div>
+
+    <!-- RUMCO -->
+    <div class="brand-showcase-full dark-card reveal">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product" src="images/bottle images/1L4A5355.jpg copy.png"
+          onerror="this.src='https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&h=600&fit=crop&crop=center'" alt="RUMCO">
+        <div class="bsf-badges"><div class="bsf-abv crimson label-only">RUM LIQUEUR</div></div>
+      </div>
+      <div class="bsf-content dark-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-rum">🥃 RUM</span></div>
+        <div class="bsf-name light">RUMCO</div>
+        <div class="bsf-tagline">Aged Complexity. Ugandan Soul.</div>
+        <p class="bsf-desc light">RUMCO is a premium rum liqueur crafted with care and developed to deliver complex, deep flavours. Warm caramel notes, rich oak undertones and a smooth, lingering finish make RUMCO the choice for those who appreciate a proper sipping spirit with East African soul.</p>
+        <div class="bsf-specs dark-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Premium Rum Liqueur</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">CHARACTER</span><span class="bsf-spec-val">Rich & Smooth</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SERVE</span><span class="bsf-spec-val">Neat / On the Rocks</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label light">TASTING NOTES</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag dark-tag">Caramel</span>
+            <span class="bsf-tag dark-tag">Oak & Vanilla</span>
+            <span class="bsf-tag dark-tag">Warm Spice</span>
+            <span class="bsf-tag dark-tag">Smooth Finish</span>
+            <span class="bsf-tag dark-tag">Rich Body</span>
+          </div>
+        </div>
+        <div class="bsf-number light">09</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     WATER & SODA
+     ============================ -->
+<section class="brand-section tan-bg" id="beverages">
+  <div class="container">
+    <div class="brands-section-header reveal">
+      <div class="bsh-left">
+        <div class="section-tag">NON-ALCOHOLIC BEVERAGES</div>
+        <h2 class="section-title" style="color:var(--dark);margin-bottom:0;">Yura Water<br><em>& Yura Soda</em></h2>
+      </div>
+      <div class="bsh-right">
+        <p>Beyond our alcoholic beverages, the Yura brand extends to premium non-alcoholic drinks — pure mineral water and refreshing sodas, crafted with the same uncompromising commitment to quality.</p>
+      </div>
+    </div>
+
+    <!-- YURA WATER -->
+    <div class="brand-showcase-full reveal">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style=""></div>
+        <img class="bsf-img-product"
+          src="images/Gemini_Generated_Image_k0dkcwk0dkcwk0dk.png"
+          alt="Yura Water" style="max-height:460px;">
+        <div class="bsf-badges"><div class="bsf-abv green-badge label-only">MINERAL WATER</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-water">💧 WATER</span></div>
+        <div class="bsf-name">YURA WATER</div>
+        <div class="bsf-tagline">Pure. Natural. Ugandan.</div>
+        <p class="bsf-desc">Yura Mineral Water is sourced from Uganda's pristine natural springs — pure, clean and naturally mineral-rich. Packaged in our signature Yura bottle, it is the perfect hydration companion for every occasion. As fresh and clean as Uganda's green hills and blue lakes.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Natural Mineral Water</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SOURCE</span><span class="bsf-spec-val">Ugandan Springs</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SIZES</span><span class="bsf-spec-val">500ml, 1L, 1.5L</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">0% — Non-Alcoholic</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">MINERALS</span><span class="bsf-spec-val">Naturally Enriched</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">CERTIFICATION</span><span class="bsf-spec-val">UNBS Certified</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">CHARACTERISTICS</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Pure & Clean</span>
+            <span class="bsf-tag">Naturally Filtered</span>
+            <span class="bsf-tag">Mineral Rich</span>
+            <span class="bsf-tag">Crisp & Fresh</span>
+            <span class="bsf-tag">Still</span>
+          </div>
+        </div>
+        <div class="bsf-number">10</div>
+      </div>
+    </div>
+
+    <!-- YURA SODA -->
+    <div class="brand-showcase-full reverse reveal" style="margin-top:4px;">
+      <div class="bsf-img">
+        <div class="bsf-img-bg" style="background-image:url('')"></div>
+        <img class="bsf-img-product"
+          src="images/Gemini_Generated_Image_k0dkcwk0dkcwk0dk.png"
+          alt="Yura Soda" style="max-height:460px;">
+        <div class="bsf-badges"><div class="bsf-abv orange-badge label-only">SODA</div></div>
+      </div>
+      <div class="bsf-content">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-soda">🥤 SODA</span></div>
+        <div class="bsf-name">YURA SODA</div>
+        <div class="bsf-tagline">Fizzy. Fun. Full of Flavour.</div>
+        <p class="bsf-desc">Yura Soda brings our commitment to quality into the carbonated soft drink world. Bursting with natural flavours and sparkling refreshment, Yura Soda is the perfect everyday drink for the whole family — and the ideal non-alcoholic companion to our full brand portfolio at any occasion.</p>
+        <div class="bsf-specs">
+          <div class="bsf-spec"><span class="bsf-spec-label">TYPE</span><span class="bsf-spec-val">Carbonated Soda</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">FLAVOURS</span><span class="bsf-spec-val">Multiple Available</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SIZES</span><span class="bsf-spec-val">300ml, 500ml, 1L</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ABV</span><span class="bsf-spec-val">0% — Non-Alcoholic</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">CARBONATION</span><span class="bsf-spec-val">Sparkling</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ORIGIN</span><span class="bsf-spec-val">Uganda</span></div>
+        </div>
+        <div class="bsf-notes">
+          <span class="bsf-notes-label">CHARACTERISTICS</span>
+          <div class="bsf-tags">
+            <span class="bsf-tag">Fizzy</span>
+            <span class="bsf-tag">Refreshing</span>
+            <span class="bsf-tag">Natural Flavours</span>
+            <span class="bsf-tag">Fun & Vibrant</span>
+            <span class="bsf-tag">All Ages</span>
+          </div>
+        </div>
+        <div class="bsf-number">11</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     SANITIZER
+     ============================ -->
+<section class="brand-section dark-bg" id="sanitizer">
+  <div class="container">
+    <div class="brands-section-header dark-border reveal">
+      <div class="bsh-left">
+        <div class="section-tag">HEALTH PRODUCTS</div>
+        <h2 class="section-title light" style="margin-bottom:0;">Quick Hand<br><em>Sanitizer</em></h2>
+      </div>
+      <div class="bsh-right">
+        <p class="light">Beyond beverages — YUTI Breweriies leverages its distilling expertise to produce NDA-certified Quick Hand Sanitizer, supplied to hospitals, clinics, pharmacies and supermarkets across Uganda.</p>
+      </div>
+    </div>
+
+    <div class="sanit-showcase reveal">
+      <div class="sanit-img-side">
+        <img src="images/bottle images/Q_IMG_8875.jpg.jpeg"
+          onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&h=600&fit=crop&crop=center'"
+          alt="Quick Hand Sanitizer Range">
+      </div>
+      <div class="sanit-content-side">
+        <div class="bsf-cat"><span class="bsf-cat-label cat-health" style="color:#4CAF50;border-color:rgba(76,175,80,0.3);background:rgba(76,175,80,0.08);">🧴 HEALTH PRODUCT</span></div>
+        <div class="bsf-name light" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:10px;">QUICK HAND<br>SANITIZER</div>
+        <div class="bsf-tagline" style="color:rgba(255,255,255,0.45);">Certified. Trusted. Effective.</div>
+        <p class="bsf-desc light">YUTI Breweriies Ltd manufactures and supplies Quick Hand Sanitizer to major pharmaceutical companies, hospitals, clinics, and supermarkets across Uganda — certified by the National Drug Authority. Our goal is to help contain the spread and eradicate diseases, including COVID-19.</p>
+        <div class="bsf-specs dark-specs" style="margin-bottom:28px;">
+          <div class="bsf-spec"><span class="bsf-spec-label">CERTIFICATION</span><span class="bsf-spec-val">NDA Uganda</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">ALCOHOL</span><span class="bsf-spec-val">70%+ Ethanol</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">SIZES</span><span class="bsf-spec-val">100ml, 1L, 20L</span></div>
+          <div class="bsf-spec"><span class="bsf-spec-label">EFFICACY</span><span class="bsf-spec-val">Kills 99.9% Germs</span></div>
+        </div>
+        <div class="sanit-cert-list">
+          <div class="sanit-cert"><div class="sanit-cert-icon">✅</div><span>National Drug Authority (NDA) Certified — Uganda</span></div>
+          <div class="sanit-cert"><div class="sanit-cert-icon">🏥</div><span>Supplied to Hospitals, Clinics & Pharmacies Nationwide</span></div>
+          <div class="sanit-cert"><div class="sanit-cert-icon">🏪</div><span>Available in Supermarkets & Retail Outlets</span></div>
+          <div class="sanit-cert"><div class="sanit-cert-icon">🧪</div><span>WHO-Recommended Formula — 70%+ Alcohol</span></div>
+          <div class="sanit-cert"><div class="sanit-cert-icon">📦</div><span>Bulk Supply Available for Institutions & Corporates</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-texture"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">YUTI<br><small>BREWERIIES LTD</small></div>
+        <p>A Beverage Distilling Company. Our People, Our Taste.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon">FB</a>
+          <a href="#" class="social-icon">TW</a>
+          <a href="#" class="social-icon">IG</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="brands.html">Our Brands</a></li>
+          <li><a href="ingredients.html">Ingredients</a></li>
+          <li><a href="distribution.html">Distribution</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-brands-list">
+        <h4>All Brands</h4>
+        <ul>
+          <li><a href="#beer">Yura Gold</a></li>
+          <li><a href="#beer">Yura Strong</a></li>
+          <li><a href="#spirits">Torrero Original</a></li>
+          <li><a href="#spirits">Yura Tangawisi</a></li>
+          <li><a href="#gin">U-Gin Waragi</a></li>
+          <li><a href="#gin">U-Gin Pineapple</a></li>
+          <li><a href="#gin">U-Gin Mango</a></li>
+          <li><a href="#gin">NYXX Chocolate Vodka</a></li>
+          <li><a href="#rum">RUMCO</a></li>
+          <li><a href="#beverages">Yura Water</a></li>
+          <li><a href="#beverages">Yura Soda</a></li>
+          <li><a href="#sanitizer">Quick Hand Sanitizer</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Namanve Industrial Plant<br>Plot No. 1134, Block 113<br>Kampala, Uganda</p>
+        <p><a href="tel:+256708131313">+256 708 131 313</a></p>
+        <p>Toll Free: <a href="tel:0800325000">0800 325 000</a></p>
+        <p><a href="mailto:info@ybl.ug">info@ybl.ug</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 YUTI BREWERIIES Ltd. All Rights Reserved.</p>
+      <p class="drink-resp">🍺 Please Drink Responsibly. 18+ Only.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// BRAND NAV ACTIVE ON SCROLL
+const brandSections = document.querySelectorAll('section[id]');
+const brandNavItems = document.querySelectorAll('.brand-nav-item');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      brandNavItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${id}`) item.classList.add('active');
+      });
+    }
+  });
+}, { threshold: 0.25, rootMargin: '-80px 0px 0px 0px' });
+brandSections.forEach(s => sectionObserver.observe(s));
+</script>
+</body>
+</html>9

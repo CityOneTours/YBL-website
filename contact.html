@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — YUTI BREWERIIES Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html" class="logo-img">
+        <img src="images/ybl loo.png" alt="YUTI BREWERIIES Logo">
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+            <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="brands.html">Our Brands</a></li>
+            <li><a href="ingredients.html">Ingredients</a></li>
+            <li><a href="distribution.html">Distribution</a></li>
+            <li><a href="promotions.html" >Promotions</a></li>
+            <li><a href="new-brands.html" >New Brands</a></li>
+            <li><a href="opportunities.html" >Opportunities</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero short">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&h=600&fit=crop" alt="">
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Contact</div>
+      <h1 class="page-title">Get In <em>Touch</em></h1>
+      <p class="page-subtitle">We'd love to hear from you</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="contact-section">
+    <div class="texture-overlay"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div class="contact-form-wrap reveal">
+          <div class="section-tag">SEND US A MESSAGE</div>
+          <h2 class="section-title" style="font-size:2rem;">How Can We<br><em>Help You?</em></h2>
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" placeholder="John">
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" placeholder="Doe">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+256 700 000 000">
+            </div>
+            <div class="form-group">
+              <label>Subject *</label>
+              <select>
+                <option value="">Select a subject</option>
+                <option>Distribution Inquiry</option>
+                <option>Partnership Opportunity</option>
+                <option>Product Information</option>
+                <option>Media & Press</option>
+                <option>General Inquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea placeholder="Tell us how we can help you..." rows="5"></textarea>
+            </div>
+            <button class="btn-primary" style="width:100%; padding:18px; font-size:0.8rem; cursor:pointer;"
+              onclick="submitForm()">
+              SEND MESSAGE
+            </button>
+            <div id="form-success"
+              style="display:none; margin-top:16px; padding:16px; background:rgba(76,175,80,0.1); border:1px solid rgba(76,175,80,0.3); color:#4CAF50; font-size:0.85rem; text-align:center;">
+              ✅ Thank you! Your message has been sent. We'll get back to you within 24 hours.
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info-wrap reveal">
+          <div class="section-tag">FIND US</div>
+          <h2 class="section-title" style="font-size:2rem; color:var(--dark);">Contact<br><em>Information</em></h2>
+
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="ci-icon">📍</div>
+              <div class="ci-content">
+                <h4>Our Address</h4>
+                <p>Namanve Industrial Plant<br>Plot No. 1134, Block 113<br>Kampala, Uganda</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="ci-icon">📞</div>
+              <div class="ci-content">
+                <h4>Phone</h4>
+                <p><a href="tel:+256708131313">+256 708 131 313</a></p>
+                <p>Toll Free: <a href="tel:0800325000">0800 325 000</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="ci-icon">✉️</div>
+              <div class="ci-content">
+                <h4>Email</h4>
+                <p><a href="mailto:info@ybl.ug">info@ybl.ug</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="ci-icon">🕐</div>
+              <div class="ci-content">
+                <h4>Business Hours</h4>
+                <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
+                <p>Saturday: 9:00 AM – 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=700&h=350&fit=crop"
+              alt="Location Map">
+            <div class="map-label">Namanve Industrial Area, Kampala</div>
+          </div>
+
+          <div class="dist-partner-card" style="margin-top:32px;">
+            <div class="partner-logo">HNH</div>
+            <div class="partner-info">
+              <strong>Distribution Inquiries</strong>
+              <span>Contact our official distribution partner</span>
+              <a href="https://www.hnh.ug" target="_blank" class="partner-link">Visit HNH.UG →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-texture"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">YUTI<br><small>BREWERIIES LTD</small></div>
+          <p>A Beverage Distilling Company. Our People, Our Taste.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">TW</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="brands.html">Our Brands</a></li>
+            <li><a href="ingredients.html">Ingredients</a></li>
+            <li><a href="distribution.html">Distribution</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-brands-list">
+          <h4>Our Brands</h4>
+          <ul>
+            <li><a href="brands.html#beer">Yura Gold</a></li>
+            <li><a href="brands.html#beer">Yura Strong</a></li>
+            <li><a href="brands.html#spirits">Torrero Original</a></li>
+            <li><a href="brands.html#spirits">Torrero Wild</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>Namanve Industrial Plant<br>Plot No. 1134, Block 113<br>Kampala, Uganda</p>
+          <p><a href="tel:+256708131313">+256 708 131 313</a></p>
+          <p><a href="mailto:info@ybl.ug">info@ybl.ug</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 YUTI BREWERIIES Ltd. All Rights Reserved.</p>
+        <p class="drink-resp">🍺 Please Drink Responsibly. 18+ Only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
