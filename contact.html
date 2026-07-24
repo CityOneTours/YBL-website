@@ -11,6 +11,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -56,30 +58,42 @@
       <div class="contact-grid">
         <!-- FORM -->
         <div class="contact-form-wrap reveal">
-          <div class="section-tag">SEND US A MESSAGE</div>
-          <h2 class="section-title" style="font-size:2rem;">How Can We<br><em>Help You?</em></h2>
-          <div class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
+    <div class="section-tag">SEND US A MESSAGE</div>
+    <h2 class="section-title" style="font-size:2rem;">How Can We<br><em>Help You?</em></h2>
+
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+        <!-- Web3Forms -->
+        <input type="hidden" name="access_key" value="1928aee7-03b8-47b4-8696-02641bcb343a">
+        <input type="hidden" name="subject" value="New Contact Form Submission - YUTI BREWERIES">
+        <input type="hidden" name="from_name" value="YUTI BREWERIES Website">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="form-row">
+            <div class="form-group">
                 <label>First Name *</label>
-                <input type="text" placeholder="John">
-              </div>
-              <div class="form-group">
+                <input type="text" name="First Name" placeholder="John" required>
+            </div>
+
+            <div class="form-group">
                 <label>Last Name *</label>
-                <input type="text" placeholder="Doe">
-              </div>
+                <input type="text" name="Last Name" placeholder="Doe" required>
             </div>
-            <div class="form-group">
-              <label>Email Address *</label>
-              <input type="email" placeholder="john@example.com">
-            </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" placeholder="+256 700 000 000">
-            </div>
-            <div class="form-group">
-              <label>Subject *</label>
-              <select>
+        </div>
+
+        <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="Email" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="Phone Number" placeholder="+256 700 000 000">
+        </div>
+
+        <div class="form-group">
+            <label>Subject *</label>
+            <select name="Subject" required>
                 <option value="">Select a subject</option>
                 <option>Distribution Inquiry</option>
                 <option>Partnership Opportunity</option>
@@ -87,22 +101,22 @@
                 <option>Media & Press</option>
                 <option>General Inquiry</option>
                 <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Message *</label>
-              <textarea placeholder="Tell us how we can help you..." rows="5"></textarea>
-            </div>
-            <button class="btn-primary" style="width:100%; padding:18px; font-size:0.8rem; cursor:pointer;"
-              onclick="submitForm()">
-              SEND MESSAGE
-            </button>
-            <div id="form-success"
-              style="display:none; margin-top:16px; padding:16px; background:rgba(76,175,80,0.1); border:1px solid rgba(76,175,80,0.3); color:#4CAF50; font-size:0.85rem; text-align:center;">
-              ✅ Thank you! Your message has been sent. We'll get back to you within 24 hours.
-            </div>
-          </div>
+            </select>
         </div>
+
+        <div class="form-group">
+            <label>Message *</label>
+            <textarea name="Message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%; padding:18px; font-size:0.8rem; cursor:pointer;">
+            SEND MESSAGE
+        </button>
+
+        <div id="contact-result" style="margin-top:16px;"></div>
+
+    </form>
+</div>
 
         <!-- CONTACT INFO -->
         <div class="contact-info-wrap reveal">
@@ -136,17 +150,16 @@
               <div class="ci-icon">🕐</div>
               <div class="ci-content">
                 <h4>Business Hours</h4>
-                <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
-                <p>Saturday: 9:00 AM – 2:00 PM</p>
+                <p>Monday – Saturday: 8:00 AM – 5:00 PM</p>
               </div>
             </div>
           </div>
 
-          <div class="contact-map">
+          <!-- <div class="contact-map">
             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=700&h=350&fit=crop"
               alt="Location Map">
             <div class="map-label">Namanve Industrial Area, Kampala</div>
-          </div>
+          </div> -->
 
           <div class="dist-partner-card" style="margin-top:32px;">
             <div class="partner-logo">HNH</div>
@@ -170,10 +183,21 @@
           <div class="footer-logo">YUTI<br><small>BREWERIIES LTD</small></div>
           <p>A Beverage Distilling Company. Our People, Our Taste.</p>
           <div class="footer-social">
-            <a href="#" class="social-icon">FB</a>
-            <a href="#" class="social-icon">TW</a>
-            <a href="#" class="social-icon">IG</a>
-          </div>
+                        <a href="https://www.facebook.com/yblug" target="_blank" class="social-icon"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/ybluganda/" target="_blank" class="social-icon"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/yblug/" target="_blank" class="social-icon"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>

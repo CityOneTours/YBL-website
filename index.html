@@ -10,6 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         /* ===========================
@@ -1096,6 +1098,7 @@
             text-decoration: none;
             display: block;
             aspect-ratio: 3/4;
+            background: white;
             transition: transform 0.4s var(--transition);
         }
 
@@ -1982,11 +1985,59 @@
             }
 
         }
+
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .award-card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            transition: .4s ease;
+            padding-bottom: 20px;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .award-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: contain;
+            display: block;
+            padding: 20px;
+        }
+
+        .award-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0 15px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        @media(max-width:991px) {
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <!-- AGE VERIFICATION POPUP -->
     <div id="age-gate" class="age-gate">
         <div class="age-gate-bg"></div>
@@ -2204,7 +2255,7 @@
                 </a>
                 <a href="brands.html#spirits" class="brand-card featured">
                     <div class="brand-img">
-                        <img src="images/brands/Torrero Premium Original - Liqueur - 700ml Glass.png" alt="Torrero">
+                        <img src="images/asdasdasd.png" alt="Torrero">
                         <div class="brand-overlay"></div>
                     </div>
                     <div class="brand-info">
@@ -2216,7 +2267,7 @@
                 </a>
                 <a href="brands.html#spirits" class="brand-card">
                     <div class="brand-img">
-                        <img src="images/brands/Nyxx  - Coffee Flavoured Vodka - 700ml Glass.png" alt="Nyxx">
+                        <img src="images/bootle.PNG" alt="Nyxx">
                         <div class="brand-overlay"></div>
                     </div>
                     <div class="brand-info">
@@ -2258,7 +2309,7 @@
                 </div>
                 <div class="dist-map">
                     <div class="map-visual">
-                        <img src="images/Map.jpeg" alt="Distribution map">
+                        <img src="images/ybl map copy.jpg" alt="Distribution map">
                         <!-- <div class="map-pins">
                             <div class="pin pin-1"><span>Kampala</span></div>
                             <div class="pin pin-2"><span>Nairobi</span></div>
@@ -2283,15 +2334,18 @@
             <div class="awards-row">
                 <div class="award-item">
                     <div class="award-icon">🏆</div>
-                    <div class="award-year">2021</div>
+                    <div class="award-year">2021 & 2022</div>
                     <div class="award-name">People's Choice Quality Award</div>
-                    <div class="award-product">Best Blended Liquor — Torrero</div>
+                    <div class="award-product">Best Blended Liquor — Torrero (Back-to-Back Winner)</div>
                 </div>
                 <div class="award-item featured">
                     <div class="award-icon">🥇</div>
-                    <div class="award-year">2022</div>
-                    <div class="award-name">People's Choice Quality Award</div>
-                    <div class="award-product">Best Blended Liquor — Torrero</div>
+                    <div class="award-year">2024 / 2025 & 2025 / 2026</div>
+                    <div class="award-name">East Africa Brand Quality Awards</div>
+                    <div class="award-product">
+                        Platinum Winner – Quality Excellence Award for the Manufacturer of Alcoholic Spirit Brands and
+                        Best Manufacturer of Premier Liquor Brands in East Africa.
+                    </div>
                 </div>
                 <div class="award-item">
                     <div class="award-icon">⭐</div>
@@ -2307,23 +2361,40 @@
 
             <div class="awards-grid">
 
+                <!-- Award 1 -->
+                <div class="award-card">
+                    <img src="images/WhatsApp_Image_2025-08-19_at_15.27.01_786b5f16-removebg-preview 1.png"
+                        alt="Award Image">
+                    <div class="award-title">
+                        People's Choice Quality Award 2021
+                    </div>
+                </div>
+
+                <!-- Award 2 -->
                 <div class="award-card">
                     <img src="https://thepunitshah.com/Awards/image00011.png" alt="Award Image">
+                    <div class="award-title">
+                        People's Choice Quality Award 2022
+                    </div>
                 </div>
 
+                <!-- Award 3 -->
                 <div class="award-card">
                     <img src="https://thepunitshah.com/Awards/image00010.png" alt="Award Image">
+                    <div class="award-title">
+                        East Africa Brand Quality Awards 2024 / 2025 </div>
                 </div>
 
+                <!-- Award 4 -->
                 <div class="award-card">
-                    <img src="images/WhatsApp_Image_2025-08-19_at_15.27.01_786b5f16-removebg-preview 1.png" alt="Award Image">
+                    <img src="images/25-26.png" alt="Award Image">
+                    <div class="award-title">
+                        East Africa Brand Quality Awards 2025 / 2026
+                    </div>
                 </div>
-
-                <!-- <div class="award-card">
-                    <img src="images/WhatsApp_Image_2025-08-19_at_15.27.01_786b5f16-removebg-preview 1.png" alt="Award Image">
-                </div> -->
 
             </div>
+
         </div>
     </section>
     <!-- CSR SECTION -->
@@ -2352,10 +2423,23 @@
                         <img src="images/ybl loo.png" alt="YUTI BREWERIIES Logo">
                     </a>
                     <!-- <p>A Beverage Distilling Company. Our People, Our Taste.</p> -->
+                    <!-- Font Awesome -->
+
                     <div class="footer-social">
-                        <a href="#" class="social-icon">FB</a>
-                        <a href="#" class="social-icon">TW</a>
-                        <a href="#" class="social-icon">IG</a>
+                        <a href="https://www.facebook.com/yblug" target="_blank" class="social-icon"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/ybluganda/" target="_blank" class="social-icon"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/yblug/" target="_blank" class="social-icon"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
