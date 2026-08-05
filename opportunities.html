@@ -1660,97 +1660,98 @@
                 font-size: clamp(3rem, 15vw, 6rem);
             }
         }
+
         /* ==============================
    INNOVATION SECTION
    ============================== */
 
-.innovation-section {
-  position: relative;
-  background: var(--dark-2);
-  padding: 120px 0;
-  overflow: hidden;
-}
+        .innovation-section {
+            position: relative;
+            background: var(--dark-2);
+            padding: 120px 0;
+            overflow: hidden;
+        }
 
-.innovation-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 30%, rgba(139, 26, 26, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 70%, rgba(247, 148, 29, 0.12) 0%, transparent 55%);
-  pointer-events: none;
-}
+        .innovation-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(139, 26, 26, 0.28) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 70%, rgba(247, 148, 29, 0.12) 0%, transparent 55%);
+            pointer-events: none;
+        }
 
-.innovation-header {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-  margin-bottom: 70px;
-}
+        .innovation-header {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            margin-bottom: 70px;
+        }
 
-.innovation-header p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.8;
-}
+        .innovation-header p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.8;
+        }
 
-.innovation-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
+        .innovation-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
 
-.innovation-card {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(247, 148, 29, 0.18);
-  padding: 42px 34px;
-  transition: all 0.35s ease;
-}
+        .innovation-card {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(247, 148, 29, 0.18);
+            padding: 42px 34px;
+            transition: all 0.35s ease;
+        }
 
-.innovation-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--gold);
-  background: rgba(247, 148, 29, 0.08);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
-}
+        .innovation-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            background: rgba(247, 148, 29, 0.08);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+        }
 
-.innovation-icon {
-  width: 58px;
-  height: 58px;
-  background: rgba(247, 148, 29, 0.12);
-  border: 1px solid rgba(247, 148, 29, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 26px;
-}
+        .innovation-icon {
+            width: 58px;
+            height: 58px;
+            background: rgba(247, 148, 29, 0.12);
+            border: 1px solid rgba(247, 148, 29, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 26px;
+        }
 
-.innovation-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.45rem;
-  color: var(--cream);
-  margin-bottom: 16px;
-}
+        .innovation-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--cream);
+            margin-bottom: 16px;
+        }
 
-.innovation-card p {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.52);
-  line-height: 1.8;
-}
+        .innovation-card p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.52);
+            line-height: 1.8;
+        }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .innovation-grid {
-    grid-template-columns: 1fr;
-  }
+        /* Mobile */
+        @media (max-width: 900px) {
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
 
-  .innovation-section {
-    padding: 80px 0;
-  }
-}
+            .innovation-section {
+                padding: 80px 0;
+            }
+        }
     </style>
 </head>
 
@@ -1770,10 +1771,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="brands.html">Our Brands</a></li>
-            <li><a href="ingredients.html">Ingredients</a></li>
+            <!-- <li><a href="ingredients.html">Ingredients</a></li> -->
             <li><a href="distribution.html">Distribution</a></li>
-            <li><a href="promotions.html" >Promotions</a></li>
-            <li><a href="new-brands.html" >New Brands</a></li>
+            <li><a href="promotions.html">Promotions</a></li>
+            <li><a href="new-brands.html">New Brands</a></li>
             <li><a href="opportunities.html" class="active">Opportunities</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -1837,52 +1838,52 @@
     </div>
 
     <section class="innovation-section">
-  <div class="container">
-    <div class="innovation-header">
-      <span class="section-tag">NEW CAPABILITIES</span>
-      <h2 class="section-title light">
-        Innovation & <em>Market Expansion</em>
-      </h2>
-      <p>
-        We support brands with new flavour creation, custom product development,
-        and Africa-wide market growth opportunities.
-      </p>
-    </div>
+        <div class="container">
+            <div class="innovation-header">
+                <span class="section-tag">NEW CAPABILITIES</span>
+                <h2 class="section-title light">
+                    Innovation & <em>Market Expansion</em>
+                </h2>
+                <p>
+                    We support brands with new flavour creation, custom product development,
+                    and Africa-wide market growth opportunities.
+                </p>
+            </div>
 
-    <div class="innovation-grid">
-      <div class="innovation-card">
-        <div class="innovation-icon">🍹</div>
-        <h3>Regular New Flavours</h3>
-        <p>
-          We continuously develop new flavours based on consumer trends and
-          market demand, including unique taste profiles not currently available
-          in the market.
-        </p>
-      </div>
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <div class="innovation-icon">🍹</div>
+                    <h3>Regular New Flavours</h3>
+                    <p>
+                        We continuously develop new flavours based on consumer trends and
+                        market demand, including unique taste profiles not currently available
+                        in the market.
+                    </p>
+                </div>
 
-      <div class="innovation-card">
-        <div class="innovation-icon">⚙️</div>
-        <h3>New Product Development</h3>
-        <p>
-          We can create completely new products tailored to specific markets,
-          audiences, and regional preferences from concept to production support.
-        </p>
-      </div>
+                <div class="innovation-card">
+                    <div class="innovation-icon">⚙️</div>
+                    <h3>New Product Development</h3>
+                    <p>
+                        We can create completely new products tailored to specific markets,
+                        audiences, and regional preferences from concept to production support.
+                    </p>
+                </div>
 
-      <div class="innovation-card">
-        <div class="innovation-icon">🌍</div>
-        <h3>Africa-Wide Support</h3>
-        <p>
-          We provide strong support across African markets, helping brands build,
-          expand, and establish themselves professionally with long-term growth.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-    
+                <div class="innovation-card">
+                    <div class="innovation-icon">🌍</div>
+                    <h3>Africa-Wide Support</h3>
+                    <p>
+                        We provide strong support across African markets, helping brands build,
+                        expand, and establish themselves professionally with long-term growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
+
+
 
     <!-- ======================== WHY PARTNER ======================== -->
     <section class="why-partner-section">
@@ -2003,134 +2004,132 @@
                 <!-- APPLICATION FORM -->
                 <form action="https://api.web3forms.com/submit" method="POST" id="applicationForm">
 
-    <!-- Web3Forms Access Key -->
-    <input type="hidden" name="access_key" value="1928aee7-03b8-47b4-8696-02641bcb343a">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="1928aee7-03b8-47b4-8696-02641bcb343a">
 
-    <!-- Optional -->
-    <input type="hidden" name="subject" value="New Distributor Application - YUTI BREWERIES">
-    <input type="hidden" name="from_name" value="YUTI BREWERIES Website">
-    <input type="checkbox" name="botcheck" style="display:none;">
+                    <!-- Optional -->
+                    <input type="hidden" name="subject" value="New Distributor Application - YUTI BREWERIES">
+                    <input type="hidden" name="from_name" value="YUTI BREWERIES Website">
+                    <input type="checkbox" name="botcheck" style="display:none;">
 
-    <div class="opp-application-form">
-        <div class="form-section-title">DISTRIBUTOR APPLICATION</div>
-        <div class="form-section-sub">
-            Complete the form below. Fields marked * are required.
-            We will contact you within 48 hours of submission.
-        </div>
+                    <div class="opp-application-form">
+                        <div class="form-section-title">DISTRIBUTOR APPLICATION</div>
+                        <div class="form-section-sub">
+                            Complete the form below. Fields marked * are required.
+                            We will contact you within 48 hours of submission.
+                        </div>
 
-        <!-- PERSONAL INFO -->
-        <div class="form-row-dark">
-            <div class="form-group-dark">
-                <label>FULL NAME *</label>
-                <input type="text" name="Full Name" required placeholder="Your full name">
-            </div>
+                        <!-- PERSONAL INFO -->
+                        <div class="form-row-dark">
+                            <div class="form-group-dark">
+                                <label>FULL NAME *</label>
+                                <input type="text" name="Full Name" required placeholder="Your full name">
+                            </div>
 
-            <div class="form-group-dark">
-                <label>PHONE NUMBER *</label>
-                <input type="tel" name="Phone Number" required placeholder="+256 700 000 000">
-            </div>
-        </div>
+                            <div class="form-group-dark">
+                                <label>PHONE NUMBER *</label>
+                                <input type="tel" name="Phone Number" required placeholder="+256 700 000 000">
+                            </div>
+                        </div>
 
-        <div class="form-group-dark">
-            <label>EMAIL ADDRESS *</label>
-            <input type="email" name="Email" required placeholder="your@email.com">
-        </div>
+                        <div class="form-group-dark">
+                            <label>EMAIL ADDRESS *</label>
+                            <input type="email" name="Email" required placeholder="your@email.com">
+                        </div>
 
-        <div class="form-group-dark">
-            <label>Your Location</label>
-            <input type="text" name="Location" placeholder="City, Country">
-        </div>
+                        <div class="form-group-dark">
+                            <label>Your Location</label>
+                            <input type="text" name="Location" placeholder="City, Country">
+                        </div>
 
-        <div class="form-group-dark">
-            <label>BUSINESS / COMPANY NAME</label>
-            <input type="text" name="Company Name" placeholder="Your business name">
-        </div>
+                        <div class="form-group-dark">
+                            <label>BUSINESS / COMPANY NAME</label>
+                            <input type="text" name="Company Name" placeholder="Your business name">
+                        </div>
 
-        <div class="form-divider"></div>
+                        <div class="form-divider"></div>
 
-        <!-- ZONE -->
-        <div class="form-group-dark">
-            <label>PREFERRED TERRITORY / ZONE *</label>
-            <select name="Preferred Zone" required>
-                <option value="">Select your preferred zone</option>
-                <option>Northern Uganda — Gulu & Surrounds</option>
-                <option>Eastern Uganda — Mbale & Jinja Corridor</option>
-                <option>Western Uganda — Fort Portal & Kasese</option>
-                <option>South Western — Mbarara & Kabale</option>
-                <option>Western Kenya — Kisumu & Kakamega</option>
-                <option>Other (specify in message)</option>
-            </select>
-        </div>
+                        <!-- ZONE -->
+                        <div class="form-group-dark">
+                            <label>PREFERRED TERRITORY / ZONE *</label>
+                            <select name="Preferred Zone" required>
+                                <option value="">Select your preferred zone</option>
+                                <option>Northern Uganda — Gulu & Surrounds</option>
+                                <option>Eastern Uganda — Mbale & Jinja Corridor</option>
+                                <option>Western Uganda — Fort Portal & Kasese</option>
+                                <option>South Western — Mbarara & Kabale</option>
+                                <option>Western Kenya — Kisumu & Kakamega</option>
+                                <option>Other (specify in message)</option>
+                            </select>
+                        </div>
 
-        <div class="form-group-dark">
-            <label>PRODUCTS OF INTEREST *</label>
-            <select name="Products of Interest" required>
-                <option value="">Select product category</option>
-                <option>Beer Only (Yura Gold & Strong)</option>
-                <option>Spirits Only (Torrero, U-Gin etc)</option>
-                <option>Full Portfolio (All Products)</option>
-                <option>Sanitizer (Healthcare Sector)</option>
-            </select>
-        </div>
+                        <div class="form-group-dark">
+                            <label>PRODUCTS OF INTEREST *</label>
+                            <select name="Products of Interest" required>
+                                <option value="">Select product category</option>
+                                <option>Beer Only (Yura Gold & Strong)</option>
+                                <option>Spirits Only (Torrero, U-Gin etc)</option>
+                                <option>Full Portfolio (All Products)</option>
+                                <option>Sanitizer (Healthcare Sector)</option>
+                            </select>
+                        </div>
 
-        <div class="form-row-dark">
-            <div class="form-group-dark">
-                <label>INVESTMENT CAPACITY</label>
-                <select name="Investment Capacity">
-                    <option value="">Select range</option>
-                    <option>UGX 10M – 20M</option>
-                    <option>UGX 20M – 50M</option>
-                    <option>UGX 50M – 100M</option>
-                    <option>UGX 100M+</option>
-                </select>
-            </div>
+                        <div class="form-row-dark">
+                            <div class="form-group-dark">
+                                <label>INVESTMENT CAPACITY</label>
+                                <select name="Investment Capacity">
+                                    <option value="">Select range</option>
+                                    <option>UGX 10M – 20M</option>
+                                    <option>UGX 20M – 50M</option>
+                                    <option>UGX 50M – 100M</option>
+                                    <option>UGX 100M+</option>
+                                </select>
+                            </div>
 
-            <div class="form-group-dark">
-                <label>DISTRIBUTION EXPERIENCE</label>
-                <select name="Distribution Experience">
-                    <option value="">Select</option>
-                    <option>None — First Time</option>
-                    <option>1–3 Years</option>
-                    <option>3–7 Years</option>
-                    <option>7+ Years</option>
-                </select>
-            </div>
-        </div>
+                            <div class="form-group-dark">
+                                <label>DISTRIBUTION EXPERIENCE</label>
+                                <select name="Distribution Experience">
+                                    <option value="">Select</option>
+                                    <option>None — First Time</option>
+                                    <option>1–3 Years</option>
+                                    <option>3–7 Years</option>
+                                    <option>7+ Years</option>
+                                </select>
+                            </div>
+                        </div>
 
-        <div class="form-divider"></div>
+                        <div class="form-divider"></div>
 
-        <div class="form-group-dark">
-            <label>TELL US ABOUT YOUR SETUP *</label>
-            <textarea
-                name="Business Setup"
-                rows="4"
-                required
-                placeholder="Describe your current business setup, storage facilities, vehicle fleet, team size and why you want to partner with YUTI BREWERIES..."></textarea>
-        </div>
+                        <div class="form-group-dark">
+                            <label>TELL US ABOUT YOUR SETUP *</label>
+                            <textarea name="Business Setup" rows="4" required
+                                placeholder="Describe your current business setup, storage facilities, vehicle fleet, team size and why you want to partner with YUTI BREWERIES..."></textarea>
+                        </div>
 
-        <div class="form-checkbox-group">
+                        <div class="form-checkbox-group">
 
-            <label class="form-checkbox">
-                <input type="checkbox" required>
-                <span>I confirm I have read and accept the partnership terms and conditions.</span>
-            </label>
+                            <label class="form-checkbox">
+                                <input type="checkbox" required>
+                                <span>I confirm I have read and accept the partnership terms and conditions.</span>
+                            </label>
 
-            <label class="form-checkbox">
-                <input type="checkbox" name="Newsletter">
-                <span>I would like to receive news, promotions and updates from YUTI BREWERIES Ltd.</span>
-            </label>
+                            <label class="form-checkbox">
+                                <input type="checkbox" name="Newsletter">
+                                <span>I would like to receive news, promotions and updates from YUTI BREWERIES
+                                    Ltd.</span>
+                            </label>
 
-        </div>
+                        </div>
 
-        <button type="submit" class="btn-apply-submit">
-            🚀 SUBMIT APPLICATION
-        </button>
+                        <button type="submit" class="btn-apply-submit">
+                            🚀 SUBMIT APPLICATION
+                        </button>
 
-        <div id="result"></div>
+                        <div id="result"></div>
 
-    </div>
+                    </div>
 
-</form>
+                </form>
             </div>
         </div>
     </section>
@@ -2221,7 +2220,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="brands.html">Our Brands</a></li>
-                        <li><a href="ingredients.html">Ingredients</a></li>
+                        <!-- <li><a href="ingredients.html">Ingredients</a></li> -->
                         <li><a href="distribution.html">Distribution</a></li>
                         <li><a href="promotions.html">Promotions</a></li>
                         <li><a href="contact.html">Contact</a></li>
