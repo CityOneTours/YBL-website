@@ -29,7 +29,7 @@
     <!-- Product structured data — this is what lets Google match a search
        (barcode number, product name, or a Lens/camera scan) to this exact page -->
     <!-- Product structured data -->
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -38,42 +38,76 @@
   "image": [
     "https://ybl.ug/images/torrero%20family%201.png"
   ],
-  "brand": { "@type": "Brand", "name": "Torrero" },
-  "manufacturer": { "@type": "Organization", "name": "Yuti Breweriies Limited" },
+  "brand": {
+    "@type": "Brand",
+    "name": "Torrero"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Yuti Breweriies Limited"
+  },
   "sku": "TORRERO-250ML",
+  "gtin": "6164004679557",
   "gtin13": "6164004679557",
   "category": "Spirits & Liqueur",
   "award": "People's Choice 2021 & 2022",
   "url": "https://ybl.ug/torrero-250ml.html",
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "ABV", "value": "42.8%" },
-    { "@type": "PropertyValue", "name": "Volume", "value": "250ml" },
-    { "@type": "PropertyValue", "name": "Local ingredients", "value": "80%" }
-  ]
-}
-</script>
 
-<!-- Breadcrumb structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ybl.ug/index.html" },
-    { "@type": "ListItem", "position": 2, "name": "Our Brands", "item": "https://ybl.ug/brands.html" },
-    { "@type": "ListItem", "position": 3, "name": "Torrero Original 250ml", "item": "https://ybl.ug/torrero-250ml.html" }
-  ]
-
-  }
-    "aggregateRating": {
+  "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.6",
     "bestRating": "5",
     "worstRating": "1",
     "reviewCount": "128"
-  }
+  },
 
-  </script>
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "ABV",
+      "value": "42.8%"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Volume",
+      "value": "250ml"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Local ingredients",
+      "value": "80%"
+    }
+  ]
+}
+</script>
+
+    <!-- Breadcrumb structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ybl.ug/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Brands",
+      "item": "https://ybl.ug/brands.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Torrero Original 250ml",
+      "item": "https://ybl.ug/torrero-250ml.html"
+    }
+  ]
+}
+</script>
 
     <style>
         .product-hero-strip {
@@ -431,6 +465,16 @@
                     <div class="product-name">TORRERO ORIGINAL</div>
                     <div class="product-size-tag">250ml Glass Bottle</div>
                     <div class="product-tagline">The Number 1 Choice.</div>
+                    <div style="margin-bottom:22px;">
+                        <a href="torrero-700ml.html"
+                            style="display:inline-block;padding:6px 14px;font-size:0.74rem;letter-spacing:0.06em;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);text-decoration:none;">
+                            700ml
+                        </a>
+                        <a href="torrero-250ml.html"
+                            style="display:inline-block;padding:6px 14px;font-size:0.74rem;letter-spacing:0.06em;color:var(--dark);background:var(--gold);margin-left:8px;text-decoration:none;">
+                            250ml
+                        </a>
+                    </div>
                     <p class="product-desc">First produced in April 2020 with the sole purpose of being a premium drink
                         that's
                         affordable to all. Distilled to perfection, with 80% of all ingredients locally purchased in
@@ -469,7 +513,8 @@
                                 onerror="this.style.display='none'">
                             <span>6 164004 679557</span>
                         </div>
-                        <p class="verify-text"><strong>GTIN 6164004679557</strong> — the code on the 250ml bottle label.
+                        <p class="verify-text"><strong>GTIN / Barcode: 6164004679557</strong> — the code on the 250ml
+                            bottle label.
                             Scan it
                             or search it to confirm you're looking at a genuine, currently listed Torrero Original 250ml
                             from Yuti
